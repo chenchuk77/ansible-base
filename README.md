@@ -1,1 +1,3 @@
-http://docs.ansible.com/ansible/playbooks_best_practices.html
+# run playbook :
+#
+# >ansible-playbook site.yml --ask-sudo-pass

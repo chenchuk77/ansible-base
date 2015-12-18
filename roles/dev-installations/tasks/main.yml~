@@ -1,16 +1,44 @@
 ---
-- name: Installs nginx web server
-  apt: pkg=nginx state=installed update_cache=true
-  notify:
-    - start nginx
+ - name: test by ping
+   shell: /usr/bin/uptime
+   register: result
 
-- name: Upload file bar.txt
-  copy: src=bar.txt dest=~/ mode=0644
-  register: out_copy1
+ - name: show result
+   debug: var=result
 
-- name: Upload file bar.txt
-  copy: src=foo.sh dest=~/ mode=0777
-  register: out_copy2
+ - name: Installs mysql
+   apt: pkg=mysql-client-core-5.6 state=installed update_cache=true
+
+
+# Install latest version of "openjdk-6-jdk" ignoring "install-recommends"
+ - name: Installs openjdk
+   apt: name=openjdk-6-jdk state=present
+
+#   notify:
+#     - openjdk installed
+#- name: Installs open jdk
+#  apt: pkg=openjdk-7-jdk state=installed update_cache=true
+#  notify:
+#     - openjdk installed
+
+#- name: Installs nginx web server
+#  apt: pkg=nginx state=installed update_cache=true
+#  notify:
+#    - start nginx
+ - name: Upload file bar.txt
+   copy: src=bar.txt dest=~/ mode=0644
+   register: out_copy1
+
+ - name: show upload result
+   debug: var=out_copy1
+
+
+#- name: Upload file bar.txt
+#  copy: src=foo.sh dest=~/ mode=0777
+#  register: out_copy2
+
+
+
 
 #  ignore_errors: True
 

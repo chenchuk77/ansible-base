@@ -1,1 +1,6 @@
-#  <-- handlers file
+---
+- name: start nginx 
+  service: name=nginx state=started
+
+#- name: restart iptables
+#  service: name=iptables state=restarted

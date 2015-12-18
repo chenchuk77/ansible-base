@@ -1,7 +1,8 @@
 ---
 - name: apply common ubuntu setup
   hosts: devmachines
-  remote_user: adminuser
+  remote_user: chenchuk
+  sudo: true
 
   roles:
     - dev-installations

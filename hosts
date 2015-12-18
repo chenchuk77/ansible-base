@@ -1,18 +1,7 @@
+
+[vars:devmachines]
+
+
 [devmachines]
 192.168.1.66
 #192.168.1.77
-
-#ansible_user=adminuser
-#ansible_ssh_pass=adminuser
-
-
-#ansible_user=chenchuk
-#ansible_ssh_pass=1Qaz2Wsx
-
-
-# ubuntu6
-#192.168.1.51
-
-# ubuntu7
-#192.168.1.52
-
