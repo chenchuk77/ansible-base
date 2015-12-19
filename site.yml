@@ -5,4 +5,5 @@
   sudo: true
 
   roles:
-    - dev-installations
+#    - dev-installations
+    - tomcat
