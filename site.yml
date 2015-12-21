@@ -1,9 +1,10 @@
 ---
 - name: apply common ubuntu setup
-  hosts: devmachines
-  remote_user: chenchuk
+  hosts: jumpservers
+  remote_user: ubuntu 
   sudo: true
 
   roles:
-#    - dev-installations
-    - tomcat
+    - dev-installations
+#    - tomcat
+#    - jump-role

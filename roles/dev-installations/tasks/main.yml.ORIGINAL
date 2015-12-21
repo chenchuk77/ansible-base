@@ -1,21 +1,21 @@
 ---
- - name: testing uptime
+ - name: test by ping
    shell: /usr/bin/uptime
-   register: out_uptime
+   register: result
 
- - name: show uptime
-   debug: var=out_uptime
+ - name: show result
+   debug: var=result
 
- - name: install useful system tools
+ - name: Install useful system tools
    apt: name={{ item }} state=present
    with_items:
      - vim
      - nano
-#     - htop
-#     - git
-#     - openjdk-6-jdk
-#     - openjdk-8-jdk
-#     - mysql-client-core-5.6
+     - htop
+     - git
+     - openjdk-6-jdk
+     - openjdk-8-jdk
+     - mysql-client-core-5.6
 
 # update_cache=true
 
@@ -24,47 +24,28 @@
 #  apt: pkg=nginx state=installed update_cache=true
 #  notify:
 #    - start nginx
- - name: upload simple static file bar.txt
+ - name: Upload file bar.txt
    copy: src=bar.txt dest=./ mode=0644
-   register: out_copy
+   register: out_copy1
 #  ignore_errors: True
 
- - name: show simple upload output
-   debug: var=out_copy
+ - name: show upload result
+   debug: var=out_copy1
 
 # copy a 'populated' template
- - name: creates the checkWebsite.py file from j2 template
+ - name: Creates the checkWebsite.py file 
    template: src=checkWebsite.py.j2 dest=./checkWebsite.py mode=0777
-   register: out_copy_template
+   register: out_copy2
 
- - name: show dynamic script building using j2 template
-   debug: var=out_copy_template
+ - name: show dynamic script building result
+   debug: var=out_copy2
 
- - name: execute checkWebsite.py will check http from remote host
-   command: ./checkWebsite.py
-   register: out_exec
+ - name: run checkWebsite.py will check http from remote host
+   shell: src=checkWebsite.py.j2 dest=./checkWebsite.py mode=0777
+   register: out_copy2
 
- - name: show script execution output
-   debug: var=out_exec
-
-
-
-
-# examples 
-#---
-#- name: Transfer and execute a script.
-#  hosts: server
-#  remote_user: test_user
-#  sudo: yes
-#  tasks:
-#     - name: Transfer the script
-#      copy: src=test.sh dest=/home/test_user mode=0777
-
-#     - name: Execute the script
-#       command: sh /home/test_user/test.sh
-
-
-
+ - name: show dynamic script building result
+   debug: var=out_copy2
 
 
 # - name: using maven to get a basic project
