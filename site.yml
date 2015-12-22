@@ -1,10 +1,24 @@
 ---
-- name: apply common ubuntu setup
-  hosts: jumpservers
+#- name: apply common ubuntu setup
+#  hosts: jumpservers
+#  remote_user: ubuntu 
+#  sudo: true
+
+#  roles:
+#    - dev-installations
+##    - tomcat
+##    - jump-role
+
+
+- name: ec2 testing
+  hosts: tag_ansible_e849158d 
   remote_user: ubuntu 
   sudo: true
 
   roles:
-    - dev-installations
+    - ec2-test
 #    - tomcat
 #    - jump-role
+
+
+

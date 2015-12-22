@@ -1,0 +1,7 @@
+#!/usr/bin/python
+import urllib
+
+# will return http code.
+# server_url_to_check passed in from group_vars
+print urllib.urlopen("{{ server_url_to_check }}").getcode()
+
