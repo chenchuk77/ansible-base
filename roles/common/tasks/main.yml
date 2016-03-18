@@ -1,1 +1,15 @@
-#  <-- tasks file can include smaller files if warranted
+---
+ - shell: whoami
+   register: output
+ - debug: var=output.stdout
+ - apt: update_cache=yes
+ - apt: name={{ item }} state=present
+   with_items:
+     - vim
+     - terminator
+     - virtualbox-guest-x11
+     - virtualbox-guest-utils
+     - virtualbox-guest-dkms
+
+   register: output
+ - debug: var=output.msg

@@ -1,5 +1,5 @@
 ---
-# Variables listed here are applicable to [dev-machines]
+# Variables listed here are applicable to [dev]
 
 httpd_port: 80
 ntpserver: 192.168.1.2

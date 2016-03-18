@@ -1,14 +1,12 @@
-[jumpservers]
-10.25.248.105
-
-[backends]
-10.25.248.61
 
 
 
-[vars:devmachines]
+[main]
+192.168.1.51
 
+[vars:dev]
 
-[devmachines]
-#192.168.1.66
-#192.168.1.77
+[dev]
+192.168.1.52
+192.168.1.53
+
