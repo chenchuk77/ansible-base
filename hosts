@@ -3,7 +3,6 @@
 [all:vars]
 ansible_connection=ssh
 ansible_ssh_user=osboxes
-ansible_ssh_pass=a27092709
 
 #############################################
 [vars:main]
