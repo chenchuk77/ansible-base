@@ -1,15 +1,15 @@
 ---
 - name: apply common utilities setup
   hosts: all
-  remote_user: osboxes
-  sudo: true
+  sudo_user: root
+  sudo: yes
   roles:
     - common
 
 - name: apply dev utilities setup
   hosts: dev
-  remote_user: osboxes
-  sudo: true
+  sudo_user: root
+  sudo: yes
   roles:
     - dev-installations
 
